@@ -14,6 +14,17 @@
 		3DFFAB54289F82CD001BD2DD /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = 3DFFAB53289F82CD001BD2DD /* Core */; };
 		3DFFAB58289F860D001BD2DD /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 3DFFAB57289F860D001BD2DD /* Moya */; };
 		3DFFAB5B289F864D001BD2DD /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFFAB5A289F864D001BD2DD /* APIProvider.swift */; };
+		3DFFAB62289F89F9001BD2DD /* EnterCountViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFFAB61289F89F9001BD2DD /* EnterCountViewInput.swift */; };
+		3DFFAB66289F8A25001BD2DD /* EnterCountViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFFAB65289F8A25001BD2DD /* EnterCountViewOutput.swift */; };
+		3DFFAB68289F8A38001BD2DD /* EnterCountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFFAB67289F8A38001BD2DD /* EnterCountViewController.swift */; };
+		3DFFAB6B289F8A98001BD2DD /* EnterCountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFFAB6A289F8A98001BD2DD /* EnterCountViewModel.swift */; };
+		3DFFAB6E289F8BAD001BD2DD /* MainModuleFactoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFFAB6D289F8BAD001BD2DD /* MainModuleFactoring.swift */; };
+		3DFFAB70289F8BCF001BD2DD /* MainModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFFAB6F289F8BCF001BD2DD /* MainModuleFactory.swift */; };
+		3DFFAB73289F8C7E001BD2DD /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFFAB72289F8C7E001BD2DD /* MainCoordinator.swift */; };
+		3DFFAB75289F9093001BD2DD /* CoordinatorFactoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFFAB74289F9093001BD2DD /* CoordinatorFactoring.swift */; };
+		3DFFAB77289F90C3001BD2DD /* CoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFFAB76289F90C3001BD2DD /* CoordinatorFactory.swift */; };
+		3DFFAB79289F9112001BD2DD /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFFAB78289F9112001BD2DD /* AppCoordinator.swift */; };
+		3DFFAB7B289F91F5001BD2DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DFFAB7A289F91F5001BD2DD /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +35,17 @@
 		3D634E34289E55A100C99071 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D634E36289E55A100C99071 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3DFFAB5A289F864D001BD2DD /* APIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
+		3DFFAB61289F89F9001BD2DD /* EnterCountViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterCountViewInput.swift; sourceTree = "<group>"; };
+		3DFFAB65289F8A25001BD2DD /* EnterCountViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterCountViewOutput.swift; sourceTree = "<group>"; };
+		3DFFAB67289F8A38001BD2DD /* EnterCountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterCountViewController.swift; sourceTree = "<group>"; };
+		3DFFAB6A289F8A98001BD2DD /* EnterCountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterCountViewModel.swift; sourceTree = "<group>"; };
+		3DFFAB6D289F8BAD001BD2DD /* MainModuleFactoring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModuleFactoring.swift; sourceTree = "<group>"; };
+		3DFFAB6F289F8BCF001BD2DD /* MainModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModuleFactory.swift; sourceTree = "<group>"; };
+		3DFFAB72289F8C7E001BD2DD /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		3DFFAB74289F9093001BD2DD /* CoordinatorFactoring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFactoring.swift; sourceTree = "<group>"; };
+		3DFFAB76289F90C3001BD2DD /* CoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFactory.swift; sourceTree = "<group>"; };
+		3DFFAB78289F9112001BD2DD /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		3DFFAB7A289F91F5001BD2DD /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,8 +81,10 @@
 			isa = PBXGroup;
 			children = (
 				3D634E36289E55A100C99071 /* Info.plist */,
-				3DFFAB59289F8620001BD2DD /* Networking */,
 				3DFFAB55289F8425001BD2DD /* Application */,
+				3DFFAB5C289F8941001BD2DD /* Factories */,
+				3DFFAB5D289F898C001BD2DD /* Flows */,
+				3DFFAB59289F8620001BD2DD /* Networking */,
 			);
 			path = ChartApp;
 			sourceTree = "<group>";
@@ -72,6 +96,8 @@
 				3D634E2A289E55A000C99071 /* SceneDelegate.swift */,
 				3D634E31289E55A100C99071 /* Assets.xcassets */,
 				3D634E33289E55A100C99071 /* LaunchScreen.storyboard */,
+				3DFFAB78289F9112001BD2DD /* AppCoordinator.swift */,
+				3DFFAB7A289F91F5001BD2DD /* Main.storyboard */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -82,6 +108,85 @@
 				3DFFAB5A289F864D001BD2DD /* APIProvider.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		3DFFAB5C289F8941001BD2DD /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				3DFFAB71289F8C4F001BD2DD /* CoordinatorFactories */,
+				3DFFAB6C289F8B81001BD2DD /* ModuleFactories */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
+		3DFFAB5D289F898C001BD2DD /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				3DFFAB5E289F8997001BD2DD /* MainFlow */,
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
+		3DFFAB5E289F8997001BD2DD /* MainFlow */ = {
+			isa = PBXGroup;
+			children = (
+				3DFFAB5F289F89A2001BD2DD /* Coordinator */,
+				3DFFAB60289F89B1001BD2DD /* Modules */,
+			);
+			path = MainFlow;
+			sourceTree = "<group>";
+		};
+		3DFFAB5F289F89A2001BD2DD /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				3DFFAB72289F8C7E001BD2DD /* MainCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		3DFFAB60289F89B1001BD2DD /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				3DFFAB63289F89FF001BD2DD /* EnterCountModule */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		3DFFAB63289F89FF001BD2DD /* EnterCountModule */ = {
+			isa = PBXGroup;
+			children = (
+				3DFFAB69289F8A77001BD2DD /* ViewModel */,
+				3DFFAB67289F8A38001BD2DD /* EnterCountViewController.swift */,
+				3DFFAB61289F89F9001BD2DD /* EnterCountViewInput.swift */,
+				3DFFAB65289F8A25001BD2DD /* EnterCountViewOutput.swift */,
+			);
+			path = EnterCountModule;
+			sourceTree = "<group>";
+		};
+		3DFFAB69289F8A77001BD2DD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3DFFAB6A289F8A98001BD2DD /* EnterCountViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3DFFAB6C289F8B81001BD2DD /* ModuleFactories */ = {
+			isa = PBXGroup;
+			children = (
+				3DFFAB6D289F8BAD001BD2DD /* MainModuleFactoring.swift */,
+				3DFFAB6F289F8BCF001BD2DD /* MainModuleFactory.swift */,
+			);
+			path = ModuleFactories;
+			sourceTree = "<group>";
+		};
+		3DFFAB71289F8C4F001BD2DD /* CoordinatorFactories */ = {
+			isa = PBXGroup;
+			children = (
+				3DFFAB74289F9093001BD2DD /* CoordinatorFactoring.swift */,
+				3DFFAB76289F90C3001BD2DD /* CoordinatorFactory.swift */,
+			);
+			path = CoordinatorFactories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,6 +255,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DFFAB7B289F91F5001BD2DD /* Main.storyboard in Resources */,
 				3D634E35289E55A100C99071 /* LaunchScreen.storyboard in Resources */,
 				3D634E32289E55A100C99071 /* Assets.xcassets in Resources */,
 			);
@@ -162,9 +268,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DFFAB70289F8BCF001BD2DD /* MainModuleFactory.swift in Sources */,
+				3DFFAB75289F9093001BD2DD /* CoordinatorFactoring.swift in Sources */,
+				3DFFAB79289F9112001BD2DD /* AppCoordinator.swift in Sources */,
 				3D634E29289E55A000C99071 /* AppDelegate.swift in Sources */,
+				3DFFAB77289F90C3001BD2DD /* CoordinatorFactory.swift in Sources */,
 				3D634E2B289E55A000C99071 /* SceneDelegate.swift in Sources */,
+				3DFFAB73289F8C7E001BD2DD /* MainCoordinator.swift in Sources */,
+				3DFFAB62289F89F9001BD2DD /* EnterCountViewInput.swift in Sources */,
+				3DFFAB68289F8A38001BD2DD /* EnterCountViewController.swift in Sources */,
+				3DFFAB6E289F8BAD001BD2DD /* MainModuleFactoring.swift in Sources */,
 				3DFFAB5B289F864D001BD2DD /* APIProvider.swift in Sources */,
+				3DFFAB6B289F8A98001BD2DD /* EnterCountViewModel.swift in Sources */,
+				3DFFAB66289F8A25001BD2DD /* EnterCountViewOutput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
