@@ -25,6 +25,7 @@
 		3DFFAB77289F90C3001BD2DD /* CoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFFAB76289F90C3001BD2DD /* CoordinatorFactory.swift */; };
 		3DFFAB79289F9112001BD2DD /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFFAB78289F9112001BD2DD /* AppCoordinator.swift */; };
 		3DFFAB7B289F91F5001BD2DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DFFAB7A289F91F5001BD2DD /* Main.storyboard */; };
+		3DFFAB7E289F9C55001BD2DD /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 3DFFAB7D289F9C55001BD2DD /* RxCocoa */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DFFAB7E289F9C55001BD2DD /* RxCocoa in Frameworks */,
 				3DFFAB58289F860D001BD2DD /* Moya in Frameworks */,
 				3DFFAB54289F82CD001BD2DD /* Core in Frameworks */,
 			);
@@ -208,6 +210,7 @@
 			packageProductDependencies = (
 				3DFFAB53289F82CD001BD2DD /* Core */,
 				3DFFAB57289F860D001BD2DD /* Moya */,
+				3DFFAB7D289F9C55001BD2DD /* RxCocoa */,
 			);
 			productName = ChartApp;
 			productReference = 3D634E25289E55A000C99071 /* ChartApp.app */;
@@ -240,6 +243,7 @@
 			packageReferences = (
 				3DFFAB52289F82CD001BD2DD /* XCRemoteSwiftPackageReference "Core" */,
 				3DFFAB56289F860D001BD2DD /* XCRemoteSwiftPackageReference "Moya" */,
+				3DFFAB7C289F9C55001BD2DD /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = 3D634E26289E55A000C99071 /* Products */;
 			projectDirPath = "";
@@ -508,6 +512,14 @@
 				kind = branch;
 			};
 		};
+		3DFFAB7C289F9C55001BD2DD /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -520,6 +532,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3DFFAB56289F860D001BD2DD /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = Moya;
+		};
+		3DFFAB7D289F9C55001BD2DD /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3DFFAB7C289F9C55001BD2DD /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

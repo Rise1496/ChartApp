@@ -6,9 +6,12 @@
 //
 
 import Moya
+import RxCocoa
 
 class EnterCountViewModel {
     private let provider: MoyaProvider<APIProvider>
+    
+    let countRelay: BehaviorRelay<String> = BehaviorRelay(value: "")
     
     init(provider: MoyaProvider<APIProvider>) {
         self.provider = provider
