@@ -40,9 +40,23 @@ class EnterCountViewModel {
 
 extension EnterCountViewModel {
     private func getPointsRequestObservable(count: Int) -> Observable<PointsRequestResult> {
-        return provider.rx.request(.getChart(count: count)).map(PointsResponse.self).map { model in
+        return provider.rx.request(.getChart(count: count)).filterSuccessfulStatusCodes().map(PointsResponse.self).map { model in
             return PointsRequestResult.success(response: model)
-        }.catchAndReturn(PointsRequestResult.failed(message:
-                "Error")).asObservable()
+        }.asObservable().catch({ error in
+            if let moyaError = error as? MoyaError {
+                var errorString = moyaError.localizedDescription
+                switch moyaError.response?.statusCode {
+                case 400:
+                    errorString = "Requested number of point is invalid"
+                case 500:
+                    errorString = "Server error"
+                default:
+                    break
+                }
+                return .just(PointsRequestResult.failed(message: errorString ?? error.localizedDescription))
+            } else {
+                return .just(PointsRequestResult.failed(message: error.localizedDescription))
+            }
+        }).asObservable()
     }
 }
