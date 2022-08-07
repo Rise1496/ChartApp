@@ -12,7 +12,6 @@
 		3D634E32289E55A100C99071 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D634E31289E55A100C99071 /* Assets.xcassets */; };
 		3D634E35289E55A100C99071 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D634E33289E55A100C99071 /* LaunchScreen.storyboard */; };
 		3DFFAB54289F82CD001BD2DD /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = 3DFFAB53289F82CD001BD2DD /* Core */; };
-		3DFFAB58289F860D001BD2DD /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 3DFFAB57289F860D001BD2DD /* Moya */; };
 		3DFFAB5B289F864D001BD2DD /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFFAB5A289F864D001BD2DD /* APIProvider.swift */; };
 		3DFFAB62289F89F9001BD2DD /* EnterCountViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFFAB61289F89F9001BD2DD /* EnterCountViewInput.swift */; };
 		3DFFAB66289F8A25001BD2DD /* EnterCountViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFFAB65289F8A25001BD2DD /* EnterCountViewOutput.swift */; };
@@ -26,6 +25,8 @@
 		3DFFAB79289F9112001BD2DD /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFFAB78289F9112001BD2DD /* AppCoordinator.swift */; };
 		3DFFAB7B289F91F5001BD2DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DFFAB7A289F91F5001BD2DD /* Main.storyboard */; };
 		3DFFAB7E289F9C55001BD2DD /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 3DFFAB7D289F9C55001BD2DD /* RxCocoa */; };
+		3DFFAB81289FA18D001BD2DD /* PointsRequestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFFAB80289FA18D001BD2DD /* PointsRequestResult.swift */; };
+		3DFFAB84289FA4F9001BD2DD /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 3DFFAB83289FA4F9001BD2DD /* RxMoya */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		3DFFAB76289F90C3001BD2DD /* CoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFactory.swift; sourceTree = "<group>"; };
 		3DFFAB78289F9112001BD2DD /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		3DFFAB7A289F91F5001BD2DD /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		3DFFAB80289FA18D001BD2DD /* PointsRequestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsRequestResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,8 +56,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DFFAB84289FA4F9001BD2DD /* RxMoya in Frameworks */,
 				3DFFAB7E289F9C55001BD2DD /* RxCocoa in Frameworks */,
-				3DFFAB58289F860D001BD2DD /* Moya in Frameworks */,
 				3DFFAB54289F82CD001BD2DD /* Core in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -107,6 +109,7 @@
 		3DFFAB59289F8620001BD2DD /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				3DFFAB7F289FA16E001BD2DD /* Model */,
 				3DFFAB5A289F864D001BD2DD /* APIProvider.swift */,
 			);
 			path = Networking;
@@ -191,6 +194,14 @@
 			path = CoordinatorFactories;
 			sourceTree = "<group>";
 		};
+		3DFFAB7F289FA16E001BD2DD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3DFFAB80289FA18D001BD2DD /* PointsRequestResult.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -209,8 +220,8 @@
 			name = ChartApp;
 			packageProductDependencies = (
 				3DFFAB53289F82CD001BD2DD /* Core */,
-				3DFFAB57289F860D001BD2DD /* Moya */,
 				3DFFAB7D289F9C55001BD2DD /* RxCocoa */,
+				3DFFAB83289FA4F9001BD2DD /* RxMoya */,
 			);
 			productName = ChartApp;
 			productReference = 3D634E25289E55A000C99071 /* ChartApp.app */;
@@ -242,8 +253,8 @@
 			mainGroup = 3D634E1C289E55A000C99071;
 			packageReferences = (
 				3DFFAB52289F82CD001BD2DD /* XCRemoteSwiftPackageReference "Core" */,
-				3DFFAB56289F860D001BD2DD /* XCRemoteSwiftPackageReference "Moya" */,
 				3DFFAB7C289F9C55001BD2DD /* XCRemoteSwiftPackageReference "RxSwift" */,
+				3DFFAB82289FA4F9001BD2DD /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = 3D634E26289E55A000C99071 /* Products */;
 			projectDirPath = "";
@@ -275,6 +286,7 @@
 				3DFFAB70289F8BCF001BD2DD /* MainModuleFactory.swift in Sources */,
 				3DFFAB75289F9093001BD2DD /* CoordinatorFactoring.swift in Sources */,
 				3DFFAB79289F9112001BD2DD /* AppCoordinator.swift in Sources */,
+				3DFFAB81289FA18D001BD2DD /* PointsRequestResult.swift in Sources */,
 				3D634E29289E55A000C99071 /* AppDelegate.swift in Sources */,
 				3DFFAB77289F90C3001BD2DD /* CoordinatorFactory.swift in Sources */,
 				3D634E2B289E55A000C99071 /* SceneDelegate.swift in Sources */,
@@ -504,19 +516,19 @@
 				kind = branch;
 			};
 		};
-		3DFFAB56289F860D001BD2DD /* XCRemoteSwiftPackageReference "Moya" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Moya/Moya";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 		3DFFAB7C289F9C55001BD2DD /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift";
 			requirement = {
 				branch = main;
+				kind = branch;
+			};
+		};
+		3DFFAB82289FA4F9001BD2DD /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				branch = master;
 				kind = branch;
 			};
 		};
@@ -528,15 +540,15 @@
 			package = 3DFFAB52289F82CD001BD2DD /* XCRemoteSwiftPackageReference "Core" */;
 			productName = Core;
 		};
-		3DFFAB57289F860D001BD2DD /* Moya */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3DFFAB56289F860D001BD2DD /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = Moya;
-		};
 		3DFFAB7D289F9C55001BD2DD /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3DFFAB7C289F9C55001BD2DD /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxCocoa;
+		};
+		3DFFAB83289FA4F9001BD2DD /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3DFFAB82289FA4F9001BD2DD /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

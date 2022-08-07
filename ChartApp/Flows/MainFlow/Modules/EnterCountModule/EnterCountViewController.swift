@@ -61,6 +61,6 @@ final class EnterCountViewController: BaseViewController, EnterCountViewInput, E
     }
     
     @objc private func applyButtonTapped() {
-        
+        viewModel.makePointsRequest(completionBlock: nil, failureBlock: nil)
     }
 }

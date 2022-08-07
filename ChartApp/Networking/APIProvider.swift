@@ -31,7 +31,7 @@ extension APIProvider: TargetType {
     var path: String {
         switch self {
         case .getChart:
-            return "/sequeniatesttask/films.json"
+            return "/api/test/points"
         }
     }
     
