@@ -13,6 +13,7 @@
 		3D634E30289E55A000C99071 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D634E2E289E55A000C99071 /* Main.storyboard */; };
 		3D634E32289E55A100C99071 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D634E31289E55A100C99071 /* Assets.xcassets */; };
 		3D634E35289E55A100C99071 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D634E33289E55A100C99071 /* LaunchScreen.storyboard */; };
+		3DFFAB54289F82CD001BD2DD /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = 3DFFAB53289F82CD001BD2DD /* Core */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DFFAB54289F82CD001BD2DD /* Core in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +85,9 @@
 			dependencies = (
 			);
 			name = ChartApp;
+			packageProductDependencies = (
+				3DFFAB53289F82CD001BD2DD /* Core */,
+			);
 			productName = ChartApp;
 			productReference = 3D634E25289E55A000C99071 /* ChartApp.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +116,9 @@
 				Base,
 			);
 			mainGroup = 3D634E1C289E55A000C99071;
+			packageReferences = (
+				3DFFAB52289F82CD001BD2DD /* XCRemoteSwiftPackageReference "Core" */,
+			);
 			productRefGroup = 3D634E26289E55A000C99071 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -358,6 +366,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3DFFAB52289F82CD001BD2DD /* XCRemoteSwiftPackageReference "Core" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Rise1496/Core";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3DFFAB53289F82CD001BD2DD /* Core */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3DFFAB52289F82CD001BD2DD /* XCRemoteSwiftPackageReference "Core" */;
+			productName = Core;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3D634E1D289E55A000C99071 /* Project object */;
 }
