@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D12B1A128A763FE00FD38D6 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 3D12B1A028A763FE00FD38D6 /* Charts */; };
+		3D12B1A528A7643A00FD38D6 /* ChartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D12B1A428A7643A00FD38D6 /* ChartTableViewCell.swift */; };
 		3D634E29289E55A000C99071 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D634E28289E55A000C99071 /* AppDelegate.swift */; };
 		3D634E2B289E55A000C99071 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D634E2A289E55A000C99071 /* SceneDelegate.swift */; };
 		3D634E32289E55A100C99071 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D634E31289E55A100C99071 /* Assets.xcassets */; };
@@ -34,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D12B1A428A7643A00FD38D6 /* ChartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartTableViewCell.swift; sourceTree = "<group>"; };
 		3D634E25289E55A000C99071 /* ChartApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChartApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D634E28289E55A000C99071 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D634E2A289E55A000C99071 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,12 +70,29 @@
 				3DFFAB84289FA4F9001BD2DD /* RxMoya in Frameworks */,
 				3DFFAB7E289F9C55001BD2DD /* RxCocoa in Frameworks */,
 				3DFFAB54289F82CD001BD2DD /* Core in Frameworks */,
+				3D12B1A128A763FE00FD38D6 /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D12B1A228A7641800FD38D6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3D12B1A328A7641F00FD38D6 /* ChartTableViewCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		3D12B1A328A7641F00FD38D6 /* ChartTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				3D12B1A428A7643A00FD38D6 /* ChartTableViewCell.swift */,
+			);
+			path = ChartTableViewCell;
+			sourceTree = "<group>";
+		};
 		3D634E1C289E55A000C99071 = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +124,7 @@
 		3D818D2E28A75C2D000F5FA1 /* ChartModule */ = {
 			isa = PBXGroup;
 			children = (
+				3D12B1A228A7641800FD38D6 /* Cells */,
 				3D818D3528A75C95000F5FA1 /* ViewModel */,
 				3D818D2F28A75C6F000F5FA1 /* ChartViewController.swift */,
 				3D818D3128A75C81000F5FA1 /* ChartViewInput.swift */,
@@ -250,6 +271,7 @@
 				3DFFAB53289F82CD001BD2DD /* Core */,
 				3DFFAB7D289F9C55001BD2DD /* RxCocoa */,
 				3DFFAB83289FA4F9001BD2DD /* RxMoya */,
+				3D12B1A028A763FE00FD38D6 /* Charts */,
 			);
 			productName = ChartApp;
 			productReference = 3D634E25289E55A000C99071 /* ChartApp.app */;
@@ -283,6 +305,7 @@
 				3DFFAB52289F82CD001BD2DD /* XCRemoteSwiftPackageReference "Core" */,
 				3DFFAB7C289F9C55001BD2DD /* XCRemoteSwiftPackageReference "RxSwift" */,
 				3DFFAB82289FA4F9001BD2DD /* XCRemoteSwiftPackageReference "Moya" */,
+				3D12B19F28A763FE00FD38D6 /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			productRefGroup = 3D634E26289E55A000C99071 /* Products */;
 			projectDirPath = "";
@@ -321,6 +344,7 @@
 				3DFFAB73289F8C7E001BD2DD /* MainCoordinator.swift in Sources */,
 				3DFFAB62289F89F9001BD2DD /* EnterCountViewInput.swift in Sources */,
 				3DFFAB68289F8A38001BD2DD /* EnterCountViewController.swift in Sources */,
+				3D12B1A528A7643A00FD38D6 /* ChartTableViewCell.swift in Sources */,
 				3D818D3428A75C91000F5FA1 /* ChartViewOutput.swift in Sources */,
 				3DFFAB6E289F8BAD001BD2DD /* MainModuleFactoring.swift in Sources */,
 				3DFFAB5B289F864D001BD2DD /* APIProvider.swift in Sources */,
@@ -540,6 +564,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		3D12B19F28A763FE00FD38D6 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		3DFFAB52289F82CD001BD2DD /* XCRemoteSwiftPackageReference "Core" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Rise1496/Core";
@@ -567,6 +599,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		3D12B1A028A763FE00FD38D6 /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3D12B19F28A763FE00FD38D6 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
+		};
 		3DFFAB53289F82CD001BD2DD /* Core */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3DFFAB52289F82CD001BD2DD /* XCRemoteSwiftPackageReference "Core" */;
