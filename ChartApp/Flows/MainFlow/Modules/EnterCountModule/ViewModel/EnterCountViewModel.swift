@@ -21,7 +21,7 @@ final class EnterCountViewModel {
         self.provider = provider
     }
     
-    func makePointsRequest(completionBlock: (()-> Void)?, failureBlock: ((String) -> Void)?) {
+    func makePointsRequest(completionBlock: Action?, failureBlock: StringAction?) {
         guard let count = Int(countRelay.value) else {
             return
         }

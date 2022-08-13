@@ -12,7 +12,7 @@ import SnapKit
 final class EnterCountViewController: BaseViewController, EnterCountViewInput, EnterCountViewOutput {
     var viewModel: EnterCountViewModel!
     
-    var onChartOpen: (() -> Void)?
+    var onChartOpen: Action?
     
     lazy var textField: UITextField = {
         let textField = UITextField()
@@ -20,6 +20,7 @@ final class EnterCountViewController: BaseViewController, EnterCountViewInput, E
         textField.placeholder = "Enter count"
         textField.layer.cornerRadius = 5.0
         textField.backgroundColor = .gray
+        textField.textAlignment = .center
         return textField
     }()
     
@@ -35,7 +36,6 @@ final class EnterCountViewController: BaseViewController, EnterCountViewInput, E
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .green
     }
     
     override func setupUI() {
@@ -65,6 +65,8 @@ final class EnterCountViewController: BaseViewController, EnterCountViewInput, E
     @objc private func applyButtonTapped() {
         viewModel.makePointsRequest(completionBlock: { [weak self] in
             self?.onChartOpen?()
-        }, failureBlock: nil)
+        }, failureBlock: { [weak self] error in
+            self?.showErrorAlertWith(error)
+        })
     }
 }

@@ -64,53 +64,37 @@ final class ChartTableViewCell: UITableViewCell {
         let xAxisMinimum = viewModel.dataEntries.min(by: { return $1.x > $0.x })?.x
         chartView.xAxis.axisMinimum = xAxisMinimum ?? 0.0
         
-        let set1 = LineChartDataSet(entries: viewModel.dataEntries, label: "DataSet 1")
-        set1.drawIconsEnabled = false
-        set1.isDrawLineWithGradientEnabled = true
-        set1.drawCirclesEnabled = true
-        setup(set1)
+        let set = LineChartDataSet(entries: viewModel.dataEntries, label: "DataSet")
+        set.drawIconsEnabled = false
+        set.isDrawLineWithGradientEnabled = true
+        set.drawCirclesEnabled = true
+        setup(set)
         let gradientColors = [ChartColorTemplates.colorFromString("#00ff0000").cgColor,
                               ChartColorTemplates.colorFromString("#ffff0000").cgColor]
         let gradient = CGGradient(colorsSpace: nil, colors: gradientColors as CFArray, locations: nil)!
+        set.fillAlpha = 1
+        set.fill = LinearGradientFill(gradient: gradient, angle: 90)
+        set.drawFilledEnabled = true
 
-        set1.fillAlpha = 1
-        set1.fill = LinearGradientFill(gradient: gradient, angle: 90)
-        set1.drawFilledEnabled = true
-
-        let data = LineChartData(dataSet: set1)
-
+        let data = LineChartData(dataSet: set)
         chartView.data = data
     }
     
     private func setup(_ dataSet: LineChartDataSet) {
-        if dataSet.isDrawLineWithGradientEnabled {
-            dataSet.lineDashLengths = nil
-            dataSet.highlightLineDashLengths = nil
-            dataSet.setColors(.black, .red, .white)
-            dataSet.setCircleColor(.black)
-            dataSet.gradientPositions = [0, 40, 100]
-            dataSet.lineWidth = 1
-            dataSet.circleRadius = 3
-            dataSet.drawCircleHoleEnabled = false
-            dataSet.valueFont = .systemFont(ofSize: 9)
-            dataSet.formLineDashLengths = nil
-            dataSet.formLineWidth = 1
-            dataSet.formSize = 15
-        } else {
-            dataSet.lineDashLengths = [5, 2.5]
-            dataSet.highlightLineDashLengths = [5, 2.5]
-            dataSet.setColor(.black)
-            dataSet.setCircleColor(.black)
-            dataSet.gradientPositions = nil
-            dataSet.lineWidth = 1
-            dataSet.circleRadius = 3
-            dataSet.drawCircleHoleEnabled = false
-            dataSet.valueFont = .systemFont(ofSize: 9)
-            dataSet.formLineDashLengths = [5, 2.5]
-            dataSet.formLineWidth = 1
-            dataSet.formSize = 15
-        }
+        dataSet.lineDashLengths = nil
+        dataSet.highlightLineDashLengths = nil
+        dataSet.setColors(.black, .red, .white)
+        dataSet.setCircleColor(.black)
+        dataSet.gradientPositions = [0, 40, 100]
+        dataSet.lineWidth = 1
+        dataSet.circleRadius = 3
+        dataSet.drawCircleHoleEnabled = false
+        dataSet.valueFont = .systemFont(ofSize: 9)
+        dataSet.formLineDashLengths = nil
+        dataSet.formLineWidth = 1
+        dataSet.formSize = 15
         dataSet.mode = .horizontalBezier
+        dataSet.setCircleColor(.blue)
     }
     
     func getImage() -> NSUIImage? {

@@ -14,7 +14,6 @@ final class ChartViewController: BaseTableViewController, ChartViewInput, ChartV
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .orange
         tableView.dataSource = self
         tableView.refreshControl = nil
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save image", style: .plain,

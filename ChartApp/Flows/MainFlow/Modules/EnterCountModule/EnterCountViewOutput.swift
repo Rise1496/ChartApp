@@ -7,6 +7,9 @@
 
 import Core
 
+typealias Action = (() -> Void)
+typealias StringAction = ((String) -> Void)
+
 protocol EnterCountViewOutput: BaseView {
-    var onChartOpen: (() -> Void)? { get set }
+    var onChartOpen: Action? { get set }
 }
