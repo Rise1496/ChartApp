@@ -32,9 +32,22 @@ final class ChartViewController: BaseTableViewController, ChartViewInput, ChartV
             return
         }
         guard let image = cell.getImage() else {
+            showErrorAlertWith("Unable to capture chart")
             return
         }
-        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+        UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
+    }
+    
+    @objc func image(_ image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: UnsafeRawPointer) {
+        if let error = error {
+            showErrorAlertWith(error.localizedDescription)
+        } else {
+            print("Content saved")
+        }
+    }
+    
+    @objc private func transferToGalleryCompleted() {
+        print("Transfer was completed")
     }
 }
 
