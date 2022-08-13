@@ -16,6 +16,7 @@ final class ChartViewController: BaseTableViewController, ChartViewInput, ChartV
         super.viewDidLoad()
         view.backgroundColor = .orange
         tableView.dataSource = self
+        tableView.refreshControl = nil
     }
     
     override func registerCells() {

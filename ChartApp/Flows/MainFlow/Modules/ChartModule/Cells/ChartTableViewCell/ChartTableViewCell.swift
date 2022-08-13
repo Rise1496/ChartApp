@@ -66,6 +66,8 @@ final class ChartTableViewCell: UITableViewCell {
         
         let set1 = LineChartDataSet(entries: viewModel.dataEntries, label: "DataSet 1")
         set1.drawIconsEnabled = false
+        set1.isDrawLineWithGradientEnabled = true
+        set1.drawCirclesEnabled = false
         setup(set1)
         let gradientColors = [ChartColorTemplates.colorFromString("#00ff0000").cgColor,
                               ChartColorTemplates.colorFromString("#ffff0000").cgColor]
@@ -108,6 +110,7 @@ final class ChartTableViewCell: UITableViewCell {
             dataSet.formLineWidth = 1
             dataSet.formSize = 15
         }
+        dataSet.mode = .horizontalBezier
     }
 }
 
