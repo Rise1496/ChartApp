@@ -17,11 +17,24 @@ final class ChartViewController: BaseTableViewController, ChartViewInput, ChartV
         view.backgroundColor = .orange
         tableView.dataSource = self
         tableView.refreshControl = nil
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save image", style: .plain,
+                                                            target: self, action: #selector(saveTapped))
     }
     
     override func registerCells() {
         super.registerCells()
         tableView.register(ChartTableViewCell.self, forCellReuseIdentifier: ChartTableViewCell.className)
+    }
+    
+    @objc private func saveTapped() {
+        guard let cell = tableView.cellForRow(at: IndexPath(row: viewModel.cells.count - 1,
+                                                            section: 0)) as? ChartTableViewCell else {
+            return
+        }
+        guard let image = cell.getImage() else {
+            return
+        }
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
     }
 }
 

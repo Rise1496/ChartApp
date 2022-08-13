@@ -112,6 +112,10 @@ final class ChartTableViewCell: UITableViewCell {
         }
         dataSet.mode = .horizontalBezier
     }
+    
+    func getImage() -> NSUIImage? {
+        return chartView.getChartImage(transparent: false)
+    }
 }
 
 extension ChartTableViewCell: ChartViewDelegate {
