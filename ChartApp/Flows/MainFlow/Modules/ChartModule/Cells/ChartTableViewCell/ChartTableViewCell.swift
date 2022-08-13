@@ -41,7 +41,7 @@ final class ChartTableViewCell: UITableViewCell {
     }
     
     private func setupViews() {
-        addSubview(chartView)
+        contentView.addSubview(chartView)
     }
     
     private func makeConstraints() {
