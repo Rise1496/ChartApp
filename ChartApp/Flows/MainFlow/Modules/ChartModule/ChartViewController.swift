@@ -12,12 +12,13 @@ import UIKit
 final class ChartViewController: BaseTableViewController, ChartViewInput, ChartViewOutput {
     var viewModel: ChartViewModel!
     
+    private var chartCell: ChartTableViewCell?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.refreshControl = nil
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save image", style: .plain,
-                                                            target: self, action: #selector(saveTapped))
     }
     
     override func registerCells() {
@@ -27,8 +28,7 @@ final class ChartViewController: BaseTableViewController, ChartViewInput, ChartV
     }
     
     @objc private func saveTapped() {
-        guard let cell = tableView.cellForRow(at: IndexPath(row: viewModel.cells.count - 1,
-                                                            section: 0)) as? ChartTableViewCell else {
+        guard let cell = chartCell else {
             return
         }
         guard let image = cell.getImage() else {
@@ -42,16 +42,14 @@ final class ChartViewController: BaseTableViewController, ChartViewInput, ChartV
         if let error = error {
             showErrorAlertWith(error.localizedDescription)
         } else {
-            print("Content saved")
+            let alert = UIAlertController(title: "", message: "Completed", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Alert.Button.OK".localized, style: .default) { _ in })
+            present(alert, animated: true, completion: nil)
         }
-    }
-    
-    @objc private func transferToGalleryCompleted() {
-        print("Transfer was completed")
     }
 }
 
-extension ChartViewController: UITableViewDataSource {
+extension ChartViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.cells.count
     }
@@ -75,6 +73,14 @@ extension ChartViewController: UITableViewDataSource {
             cell.setup(viewModel: viewModel)
             cell.selectionStyle = .none
             return cell
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if let cell = cell as? ChartTableViewCell {
+            self.chartCell = cell
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save image", style: .plain,
+                                                                target: self, action: #selector(saveTapped))
         }
     }
 }
