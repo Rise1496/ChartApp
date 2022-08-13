@@ -8,5 +8,5 @@
 import Core
 
 protocol EnterCountViewOutput: BaseView {
-    
+    var onChartOpen: (() -> Void)? { get set }
 }

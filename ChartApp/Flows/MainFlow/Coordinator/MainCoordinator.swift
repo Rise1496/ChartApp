@@ -28,6 +28,18 @@ class MainCoordinator: BaseCoordinator {
     private func showEnterCountModule() {
         var enterCountModule = factory.makeEnterCountModule()
         enterCountModule.viewModel = EnterCountViewModel(provider: provider)
+        enterCountModule.onChartOpen = { [weak self, weak enterCountModule] in
+            guard let pointsReponse = enterCountModule?.viewModel.pointsResponse else {
+                return
+            }
+            self?.showChartModule(pointsResponse: pointsReponse)
+        }
         router.setRootModule(enterCountModule)
+    }
+    
+    private func showChartModule(pointsResponse: PointsResponse) {
+        var chartModule = ChartViewController()
+        chartModule.viewModel = ChartViewModel(pointsResponse: pointsResponse)
+        router.push(chartModule)
     }
 }

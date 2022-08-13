@@ -9,4 +9,8 @@ class MainModuleFactory: MainModuleFactoring {
     func makeEnterCountModule() -> EnterCountViewInput & EnterCountViewOutput {
         return EnterCountViewController()
     }
+    
+    func makeChartModule() -> ChartViewInput & ChartViewOutput {
+        return ChartViewController()
+    }
 }

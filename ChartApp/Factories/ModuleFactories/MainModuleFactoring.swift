@@ -7,4 +7,5 @@
 
 protocol MainModuleFactoring {
     func makeEnterCountModule() -> EnterCountViewInput & EnterCountViewOutput
+    func makeChartModule() -> ChartViewInput & ChartViewOutput
 }

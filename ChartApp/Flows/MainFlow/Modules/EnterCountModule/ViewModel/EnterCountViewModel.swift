@@ -10,11 +10,12 @@ import Moya
 import RxCocoa
 import RxSwift
 
-class EnterCountViewModel {
+final class EnterCountViewModel {
     private let provider: MoyaProvider<APIProvider>
     private let disposeBag = DisposeBag()
     
     let countRelay: BehaviorRelay<String> = BehaviorRelay(value: "")
+    var pointsResponse: PointsResponse?
     
     init(provider: MoyaProvider<APIProvider>) {
         self.provider = provider
@@ -28,6 +29,7 @@ class EnterCountViewModel {
         getPointsRequest.subscribe(onNext: { [weak self] (result) in
             switch result {
             case .success(let response):
+                self?.pointsResponse = response
                 completionBlock?()
             case .failed(let message):
                 failureBlock?(message)
@@ -53,7 +55,7 @@ extension EnterCountViewModel {
                 default:
                     break
                 }
-                return .just(PointsRequestResult.failed(message: errorString ?? error.localizedDescription))
+                return .just(PointsRequestResult.failed(message: errorString))
             } else {
                 return .just(PointsRequestResult.failed(message: error.localizedDescription))
             }

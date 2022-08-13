@@ -11,6 +11,10 @@
 		3D634E2B289E55A000C99071 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D634E2A289E55A000C99071 /* SceneDelegate.swift */; };
 		3D634E32289E55A100C99071 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D634E31289E55A100C99071 /* Assets.xcassets */; };
 		3D634E35289E55A100C99071 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D634E33289E55A100C99071 /* LaunchScreen.storyboard */; };
+		3D818D3028A75C6F000F5FA1 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D818D2F28A75C6F000F5FA1 /* ChartViewController.swift */; };
+		3D818D3228A75C81000F5FA1 /* ChartViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D818D3128A75C81000F5FA1 /* ChartViewInput.swift */; };
+		3D818D3428A75C91000F5FA1 /* ChartViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D818D3328A75C91000F5FA1 /* ChartViewOutput.swift */; };
+		3D818D3728A75CA9000F5FA1 /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D818D3628A75CA9000F5FA1 /* ChartViewModel.swift */; };
 		3DFFAB54289F82CD001BD2DD /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = 3DFFAB53289F82CD001BD2DD /* Core */; };
 		3DFFAB5B289F864D001BD2DD /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFFAB5A289F864D001BD2DD /* APIProvider.swift */; };
 		3DFFAB62289F89F9001BD2DD /* EnterCountViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFFAB61289F89F9001BD2DD /* EnterCountViewInput.swift */; };
@@ -36,6 +40,10 @@
 		3D634E31289E55A100C99071 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D634E34289E55A100C99071 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D634E36289E55A100C99071 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D818D2F28A75C6F000F5FA1 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
+		3D818D3128A75C81000F5FA1 /* ChartViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewInput.swift; sourceTree = "<group>"; };
+		3D818D3328A75C91000F5FA1 /* ChartViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewOutput.swift; sourceTree = "<group>"; };
+		3D818D3628A75CA9000F5FA1 /* ChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
 		3DFFAB5A289F864D001BD2DD /* APIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
 		3DFFAB61289F89F9001BD2DD /* EnterCountViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterCountViewInput.swift; sourceTree = "<group>"; };
 		3DFFAB65289F8A25001BD2DD /* EnterCountViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterCountViewOutput.swift; sourceTree = "<group>"; };
@@ -91,6 +99,25 @@
 				3DFFAB59289F8620001BD2DD /* Networking */,
 			);
 			path = ChartApp;
+			sourceTree = "<group>";
+		};
+		3D818D2E28A75C2D000F5FA1 /* ChartModule */ = {
+			isa = PBXGroup;
+			children = (
+				3D818D3528A75C95000F5FA1 /* ViewModel */,
+				3D818D2F28A75C6F000F5FA1 /* ChartViewController.swift */,
+				3D818D3128A75C81000F5FA1 /* ChartViewInput.swift */,
+				3D818D3328A75C91000F5FA1 /* ChartViewOutput.swift */,
+			);
+			path = ChartModule;
+			sourceTree = "<group>";
+		};
+		3D818D3528A75C95000F5FA1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3D818D3628A75CA9000F5FA1 /* ChartViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		3DFFAB55289F8425001BD2DD /* Application */ = {
@@ -152,6 +179,7 @@
 		3DFFAB60289F89B1001BD2DD /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				3D818D2E28A75C2D000F5FA1 /* ChartModule */,
 				3DFFAB63289F89FF001BD2DD /* EnterCountModule */,
 			);
 			path = Modules;
@@ -293,10 +321,14 @@
 				3DFFAB73289F8C7E001BD2DD /* MainCoordinator.swift in Sources */,
 				3DFFAB62289F89F9001BD2DD /* EnterCountViewInput.swift in Sources */,
 				3DFFAB68289F8A38001BD2DD /* EnterCountViewController.swift in Sources */,
+				3D818D3428A75C91000F5FA1 /* ChartViewOutput.swift in Sources */,
 				3DFFAB6E289F8BAD001BD2DD /* MainModuleFactoring.swift in Sources */,
 				3DFFAB5B289F864D001BD2DD /* APIProvider.swift in Sources */,
+				3D818D3228A75C81000F5FA1 /* ChartViewInput.swift in Sources */,
 				3DFFAB6B289F8A98001BD2DD /* EnterCountViewModel.swift in Sources */,
+				3D818D3728A75CA9000F5FA1 /* ChartViewModel.swift in Sources */,
 				3DFFAB66289F8A25001BD2DD /* EnterCountViewOutput.swift in Sources */,
+				3D818D3028A75C6F000F5FA1 /* ChartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

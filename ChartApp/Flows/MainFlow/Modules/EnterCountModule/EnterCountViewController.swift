@@ -12,6 +12,8 @@ import SnapKit
 final class EnterCountViewController: BaseViewController, EnterCountViewInput, EnterCountViewOutput {
     var viewModel: EnterCountViewModel!
     
+    var onChartOpen: (() -> Void)?
+    
     lazy var textField: UITextField = {
         let textField = UITextField()
         textField.keyboardType = .numberPad
@@ -61,6 +63,8 @@ final class EnterCountViewController: BaseViewController, EnterCountViewInput, E
     }
     
     @objc private func applyButtonTapped() {
-        viewModel.makePointsRequest(completionBlock: nil, failureBlock: nil)
+        viewModel.makePointsRequest(completionBlock: { [weak self] in
+            self?.onChartOpen?()
+        }, failureBlock: nil)
     }
 }
