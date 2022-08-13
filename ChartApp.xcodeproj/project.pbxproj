@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3D12B1A128A763FE00FD38D6 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 3D12B1A028A763FE00FD38D6 /* Charts */; };
 		3D12B1A528A7643A00FD38D6 /* ChartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D12B1A428A7643A00FD38D6 /* ChartTableViewCell.swift */; };
+		3D1EC80B28A7CDDF00003DE6 /* PointTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1EC80A28A7CDDF00003DE6 /* PointTableViewCell.swift */; };
 		3D634E29289E55A000C99071 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D634E28289E55A000C99071 /* AppDelegate.swift */; };
 		3D634E2B289E55A000C99071 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D634E2A289E55A000C99071 /* SceneDelegate.swift */; };
 		3D634E32289E55A100C99071 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D634E31289E55A100C99071 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		3D12B1A428A7643A00FD38D6 /* ChartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartTableViewCell.swift; sourceTree = "<group>"; };
+		3D1EC80A28A7CDDF00003DE6 /* PointTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointTableViewCell.swift; sourceTree = "<group>"; };
 		3D634E25289E55A000C99071 /* ChartApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChartApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D634E28289E55A000C99071 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D634E2A289E55A000C99071 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 		3D12B1A228A7641800FD38D6 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				3D1EC80928A7CDB800003DE6 /* PointTableViewCell */,
 				3D12B1A328A7641F00FD38D6 /* ChartTableViewCell */,
 			);
 			path = Cells;
@@ -91,6 +94,14 @@
 				3D12B1A428A7643A00FD38D6 /* ChartTableViewCell.swift */,
 			);
 			path = ChartTableViewCell;
+			sourceTree = "<group>";
+		};
+		3D1EC80928A7CDB800003DE6 /* PointTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				3D1EC80A28A7CDDF00003DE6 /* PointTableViewCell.swift */,
+			);
+			path = PointTableViewCell;
 			sourceTree = "<group>";
 		};
 		3D634E1C289E55A000C99071 = {
@@ -342,6 +353,7 @@
 				3DFFAB77289F90C3001BD2DD /* CoordinatorFactory.swift in Sources */,
 				3D634E2B289E55A000C99071 /* SceneDelegate.swift in Sources */,
 				3DFFAB73289F8C7E001BD2DD /* MainCoordinator.swift in Sources */,
+				3D1EC80B28A7CDDF00003DE6 /* PointTableViewCell.swift in Sources */,
 				3DFFAB62289F89F9001BD2DD /* EnterCountViewInput.swift in Sources */,
 				3DFFAB68289F8A38001BD2DD /* EnterCountViewController.swift in Sources */,
 				3D12B1A528A7643A00FD38D6 /* ChartTableViewCell.swift in Sources */,

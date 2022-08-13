@@ -12,6 +12,7 @@ final class ChartViewModel {
     
     enum Cell {
         case chartCell(viewModel: ChartTableViewCell.ViewModel)
+        case pointCell(viewModel: PointTableViewCell.ViewModel)
     }
     
     var cells = [Cell]()
@@ -21,6 +22,10 @@ final class ChartViewModel {
         
         let chartEntries = pointsResponse.points.map({ return ChartDataEntry(x: $0.x, y: $0.y) })
         let sortedCahrtEntries = chartEntries.sorted(by: { return $0.x < $1.x })
+        _ = sortedCahrtEntries.map({ [weak self] entry in
+            self?.cells.append(.pointCell(viewModel: PointTableViewCell.ViewModel(dataEntry: entry)))
+            return
+        })
         cells.append(.chartCell(viewModel: ChartTableViewCell.ViewModel(dataEntries: sortedCahrtEntries)))
     }
 }

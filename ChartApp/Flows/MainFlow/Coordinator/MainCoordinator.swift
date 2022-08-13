@@ -38,7 +38,7 @@ class MainCoordinator: BaseCoordinator {
     }
     
     private func showChartModule(pointsResponse: PointsResponse) {
-        var chartModule = ChartViewController()
+        let chartModule = ChartViewController()
         chartModule.viewModel = ChartViewModel(pointsResponse: pointsResponse)
         router.push(chartModule)
     }

@@ -24,6 +24,7 @@ final class ChartViewController: BaseTableViewController, ChartViewInput, ChartV
     override func registerCells() {
         super.registerCells()
         tableView.register(ChartTableViewCell.self, forCellReuseIdentifier: ChartTableViewCell.className)
+        tableView.register(PointTableViewCell.self, forCellReuseIdentifier: PointTableViewCell.className)
     }
     
     @objc private func saveTapped() {
@@ -48,6 +49,15 @@ extension ChartViewController: UITableViewDataSource {
         case .chartCell(let viewModel):
             guard let cell = tableView.dequeueReusableCell(withIdentifier:
                                                             ChartTableViewCell.className) as? ChartTableViewCell else {
+                return UITableViewCell()
+            }
+            cell.setup(viewModel: viewModel)
+            cell.selectionStyle = .none
+            return cell
+            
+        case .pointCell(let viewModel):
+            guard let cell = tableView.dequeueReusableCell(withIdentifier:
+                                                            PointTableViewCell.className) as? PointTableViewCell else {
                 return UITableViewCell()
             }
             cell.setup(viewModel: viewModel)
