@@ -30,8 +30,15 @@ final class EnterCountViewController: BaseViewController, EnterCountViewInput, E
         button.backgroundColor = .gray
         button.layer.cornerRadius = 5.0
         button.addTarget(self, action: #selector(applyButtonTapped), for: .touchUpInside)
-        button.setTitle("Apply", for: .normal)
+        button.setTitle("Let's go", for: .normal)
         return button
+    }()
+    
+    lazy var informationLabel: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.text = "Information"
+        return label
     }()
     
     override func viewDidLoad() {
@@ -41,6 +48,7 @@ final class EnterCountViewController: BaseViewController, EnterCountViewInput, E
     override func setupUI() {
         view.addSubview(textField)
         view.addSubview(applyButton)
+        view.addSubview(informationLabel)
         
         textField.snp.makeConstraints({ make in
             make.centerX.equalToSuperview()
@@ -48,6 +56,12 @@ final class EnterCountViewController: BaseViewController, EnterCountViewInput, E
             make.height.equalTo(50)
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
+        })
+        
+        informationLabel.snp.makeConstraints({ make in
+            make.bottom.equalTo(textField.snp.top).offset(-20)
+            make.leading.equalTo(textField.snp.leading)
+            make.trailing.equalTo(textField.snp.trailing)
         })
         
         applyButton.snp.makeConstraints({ make in
