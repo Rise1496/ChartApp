@@ -52,12 +52,21 @@ final class ChartTableViewCell: UITableViewCell {
     }
     
     func setup(viewModel: ViewModel) {
+        let leftAxis = chartView.leftAxis
+        leftAxis.removeAllLimitLines()
+        let axisMaximum = viewModel.dataEntries.max(by: { return $1.y > $0.y })?.y
+        let axisMinimum = viewModel.dataEntries.min(by: { return $1.y > $0.y })?.y
+        leftAxis.axisMaximum = axisMaximum ?? 0.0
+        leftAxis.axisMinimum = axisMinimum ?? 0.0
+        leftAxis.gridLineDashLengths = [5, 5]
+        leftAxis.drawLimitLinesBehindDataEnabled = true
+        
+        let xAxisMinimum = viewModel.dataEntries.min(by: { return $1.x > $0.x })?.x
+        chartView.xAxis.axisMinimum = xAxisMinimum ?? 0.0
+        
         let set1 = LineChartDataSet(entries: viewModel.dataEntries, label: "DataSet 1")
         set1.drawIconsEnabled = false
         setup(set1)
-
-        let value = ChartDataEntry(x: Double(3), y: 3)
-        set1.addEntryOrdered(value)
         let gradientColors = [ChartColorTemplates.colorFromString("#00ff0000").cgColor,
                               ChartColorTemplates.colorFromString("#ffff0000").cgColor]
         let gradient = CGGradient(colorsSpace: nil, colors: gradientColors as CFArray, locations: nil)!
@@ -104,4 +113,24 @@ final class ChartTableViewCell: UITableViewCell {
 
 extension ChartTableViewCell: ChartViewDelegate {
     
+}
+
+extension NSObject {
+
+    public class var nameOfClass: String {
+        return NSStringFromClass(self).components(separatedBy: ".").last!
+    }
+
+    public var nameOfClass: String {
+        return NSStringFromClass(type(of: self)).components(separatedBy: ".").last!
+    }
+
+    public static var nibName: String {
+        return String(describing: self)
+    }
+
+    public static var className: String {
+        return String(describing: self)
+    }
+
 }
