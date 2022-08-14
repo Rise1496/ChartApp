@@ -41,6 +41,13 @@ final class EnterCountViewController: BaseViewController, EnterCountViewInput, E
         return label
     }()
     
+    lazy var activityIndicator: UIActivityIndicatorView = {
+       let activityIndicator = UIActivityIndicatorView()
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.stopAnimating()
+        return activityIndicator
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -49,6 +56,7 @@ final class EnterCountViewController: BaseViewController, EnterCountViewInput, E
         view.addSubview(textField)
         view.addSubview(applyButton)
         view.addSubview(informationLabel)
+        view.addSubview(activityIndicator)
         
         textField.snp.makeConstraints({ make in
             make.centerX.equalToSuperview()
@@ -70,6 +78,10 @@ final class EnterCountViewController: BaseViewController, EnterCountViewInput, E
             make.width.equalTo(150)
             make.top.equalTo(textField.snp.bottom).offset(10)
         })
+        
+        activityIndicator.snp.makeConstraints({ make in
+            make.centerX.centerY.equalToSuperview()
+        })
     }
     
     override func setupBindings() {
@@ -77,9 +89,15 @@ final class EnterCountViewController: BaseViewController, EnterCountViewInput, E
     }
     
     @objc private func applyButtonTapped() {
+        activityIndicator.startAnimating()
+        view.isUserInteractionEnabled = false
         viewModel.makePointsRequest(completionBlock: { [weak self] in
+            self?.view.isUserInteractionEnabled = true
+            self?.activityIndicator.stopAnimating()
             self?.onChartOpen?()
         }, failureBlock: { [weak self] error in
+            self?.view.isUserInteractionEnabled = true
+            self?.activityIndicator.stopAnimating()
             self?.showErrorAlertWith(error)
         })
     }
