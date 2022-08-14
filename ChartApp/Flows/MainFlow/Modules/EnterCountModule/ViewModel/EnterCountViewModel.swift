@@ -11,15 +11,24 @@ import RxCocoa
 import RxSwift
 
 final class EnterCountViewModel {
+    
+    // MARK: - Private properties
+    
     private let provider: MoyaProvider<APIProvider>
     private let disposeBag = DisposeBag()
+    
+    // MARK: - Internal properties
     
     let countRelay: BehaviorRelay<String> = BehaviorRelay(value: "")
     var pointsResponse: PointsResponse?
     
+    // MARK: - Lifecycle
+    
     init(provider: MoyaProvider<APIProvider>) {
         self.provider = provider
     }
+    
+    // MARK: - Internal methodes
     
     func makePointsRequest(completionBlock: Action?, failureBlock: StringAction?) {
         guard let count = Int(countRelay.value) else {
@@ -39,6 +48,8 @@ final class EnterCountViewModel {
         }).disposed(by: disposeBag)
     }
 }
+
+// MARK: - Observable request
 
 extension EnterCountViewModel {
     private func getPointsRequestObservable(count: Int) -> Observable<PointsRequestResult> {

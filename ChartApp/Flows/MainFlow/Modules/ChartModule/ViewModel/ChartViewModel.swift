@@ -8,14 +8,18 @@
 import Charts
 
 final class ChartViewModel {
-    let pointsResponse: PointsResponse
     
     enum Cell {
         case chartCell(viewModel: ChartTableViewCell.ViewModel)
         case pointCell(viewModel: PointTableViewCell.ViewModel)
     }
     
+    // MARK: - Internal properties
+    
     var cells = [Cell]()
+    let pointsResponse: PointsResponse
+    
+    // MARK: - Lifecycle
     
     init(pointsResponse: PointsResponse) {
         self.pointsResponse = pointsResponse

@@ -10,11 +10,18 @@ import UIKit
 import SnapKit
 
 final class EnterCountViewController: BaseViewController, EnterCountViewInput, EnterCountViewOutput {
+    
+    // MARK: - EnterCountViewInput
+    
     var viewModel: EnterCountViewModel!
+    
+    // MARK: - EnterCountViewOutput
     
     var onChartOpen: Action?
     
-    lazy var textField: UITextField = {
+    // MARK: - Private properties
+    
+    private lazy var textField: UITextField = {
         let textField = UITextField()
         textField.keyboardType = .numberPad
         textField.placeholder = "EnterCount.TextField.Placeholder".localized
@@ -24,7 +31,7 @@ final class EnterCountViewController: BaseViewController, EnterCountViewInput, E
         return textField
     }()
     
-    lazy var applyButton: UIButton = {
+    private lazy var applyButton: UIButton = {
         let button = UIButton()
         button.setTitleColor(.blue, for: .normal)
         button.backgroundColor = .gray
@@ -34,19 +41,21 @@ final class EnterCountViewController: BaseViewController, EnterCountViewInput, E
         return button
     }()
     
-    lazy var informationLabel: UILabel = {
+    private lazy var informationLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         label.text = "EnterCount.Information".localized
         return label
     }()
     
-    lazy var activityIndicator: UIActivityIndicatorView = {
+    private lazy var activityIndicator: UIActivityIndicatorView = {
        let activityIndicator = UIActivityIndicatorView()
         activityIndicator.hidesWhenStopped = true
         activityIndicator.stopAnimating()
         return activityIndicator
     }()
+    
+    // MARK: - Internal properties
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,6 +96,8 @@ final class EnterCountViewController: BaseViewController, EnterCountViewInput, E
     override func setupBindings() {
         textField.rx.text.orEmpty.bind(to: viewModel.countRelay).disposed(by: disposeBag)
     }
+    
+    // MARK: - Private methodes
     
     @objc private func applyButtonTapped() {
         activityIndicator.startAnimating()

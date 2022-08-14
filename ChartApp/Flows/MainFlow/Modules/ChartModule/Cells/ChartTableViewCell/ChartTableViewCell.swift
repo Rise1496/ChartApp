@@ -18,6 +18,8 @@ final class ChartTableViewCell: UITableViewCell {
         }
     }
     
+    // MARK: - Private properties
+    
     private lazy var chartView: LineChartView = {
         let chartView = LineChartView()
         chartView.delegate = self
@@ -30,6 +32,8 @@ final class ChartTableViewCell: UITableViewCell {
         return chartView
     }()
     
+    // MARK: - Lifecycle
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupViews()
@@ -39,6 +43,8 @@ final class ChartTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - Private methodes
     
     private func setupViews() {
         contentView.addSubview(chartView)
@@ -50,6 +56,25 @@ final class ChartTableViewCell: UITableViewCell {
             make.height.equalTo(500)
         })
     }
+    
+    private func setup(_ dataSet: LineChartDataSet) {
+        dataSet.lineDashLengths = nil
+        dataSet.highlightLineDashLengths = nil
+        dataSet.setColors(.black, .red, .white)
+        dataSet.setCircleColor(.black)
+        dataSet.gradientPositions = [0, 40, 100]
+        dataSet.lineWidth = 1
+        dataSet.circleRadius = 3
+        dataSet.drawCircleHoleEnabled = false
+        dataSet.valueFont = .systemFont(ofSize: 9)
+        dataSet.formLineDashLengths = nil
+        dataSet.formLineWidth = 1
+        dataSet.formSize = 15
+        dataSet.mode = .horizontalBezier
+        dataSet.setCircleColor(.blue)
+    }
+    
+    // MARK: - Internal methodes
     
     func setup(viewModel: ViewModel) {
         let leftAxis = chartView.leftAxis
@@ -80,31 +105,18 @@ final class ChartTableViewCell: UITableViewCell {
         chartView.data = data
     }
     
-    private func setup(_ dataSet: LineChartDataSet) {
-        dataSet.lineDashLengths = nil
-        dataSet.highlightLineDashLengths = nil
-        dataSet.setColors(.black, .red, .white)
-        dataSet.setCircleColor(.black)
-        dataSet.gradientPositions = [0, 40, 100]
-        dataSet.lineWidth = 1
-        dataSet.circleRadius = 3
-        dataSet.drawCircleHoleEnabled = false
-        dataSet.valueFont = .systemFont(ofSize: 9)
-        dataSet.formLineDashLengths = nil
-        dataSet.formLineWidth = 1
-        dataSet.formSize = 15
-        dataSet.mode = .horizontalBezier
-        dataSet.setCircleColor(.blue)
-    }
-    
     func getImage() -> NSUIImage? {
         return chartView.getChartImage(transparent: false)
     }
 }
 
+// MARK: - ChartViewDelegate
+
 extension ChartTableViewCell: ChartViewDelegate {
     
 }
+
+// MARK: - NSObject extension
 
 extension NSObject {
 

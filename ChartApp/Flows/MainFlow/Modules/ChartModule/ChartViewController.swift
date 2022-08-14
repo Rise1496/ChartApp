@@ -10,9 +10,16 @@ import Foundation
 import UIKit
 
 final class ChartViewController: BaseTableViewController, ChartViewInput, ChartViewOutput {
+    
+    // MARK: - ChartViewInput
+    
     var viewModel: ChartViewModel!
     
+    // MARK: - Private properties
+    
     private var chartCell: ChartTableViewCell?
+    
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +34,8 @@ final class ChartViewController: BaseTableViewController, ChartViewInput, ChartV
         tableView.register(PointTableViewCell.self, forCellReuseIdentifier: PointTableViewCell.className)
     }
     
+    // MARK: - Private methodes
+    
     @objc private func saveTapped() {
         guard let cell = chartCell else {
             return
@@ -38,7 +47,7 @@ final class ChartViewController: BaseTableViewController, ChartViewInput, ChartV
         UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
     }
     
-    @objc func image(_ image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: UnsafeRawPointer) {
+    @objc private func image(_ image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: UnsafeRawPointer) {
         if let error = error {
             showErrorAlertWith(error.localizedDescription)
         } else {
@@ -48,6 +57,8 @@ final class ChartViewController: BaseTableViewController, ChartViewInput, ChartV
         }
     }
 }
+
+// MARK: - UITableViewDataSource, UITableViewDelegate
 
 extension ChartViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

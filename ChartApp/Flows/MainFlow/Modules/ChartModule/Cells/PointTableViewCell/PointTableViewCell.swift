@@ -17,6 +17,8 @@ final class PointTableViewCell: UITableViewCell {
         }
     }
     
+    // MARK: - Private properties
+    
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -35,6 +37,8 @@ final class PointTableViewCell: UITableViewCell {
         return UILabel()
     }()
     
+    // MARK: - Lifecycle
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupViews()
@@ -44,6 +48,8 @@ final class PointTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - Private methodes
     
     private func setupViews() {
         addSubview(stackView)
@@ -57,6 +63,8 @@ final class PointTableViewCell: UITableViewCell {
             make.height.equalTo(50)
         })
     }
+    
+    // MARK: - Internal methodes
     
     func setup(viewModel: ViewModel) {
         xLabel.text = "x: \(viewModel.dataEntry.x)"
