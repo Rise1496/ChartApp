@@ -32,7 +32,7 @@ final class ChartViewController: BaseTableViewController, ChartViewInput, ChartV
             return
         }
         guard let image = cell.getImage() else {
-            showErrorAlertWith("Unable to capture chart")
+            showErrorAlertWith("Chart.Save.Gallery.Error".localized)
             return
         }
         UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
@@ -42,7 +42,7 @@ final class ChartViewController: BaseTableViewController, ChartViewInput, ChartV
         if let error = error {
             showErrorAlertWith(error.localizedDescription)
         } else {
-            let alert = UIAlertController(title: "", message: "Completed", preferredStyle: .alert)
+            let alert = UIAlertController(title: "", message: "Chart.Completed".localized, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Alert.Button.OK".localized, style: .default) { _ in })
             present(alert, animated: true, completion: nil)
         }
@@ -79,7 +79,7 @@ extension ChartViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if let cell = cell as? ChartTableViewCell {
             self.chartCell = cell
-            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save image", style: .plain,
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Chart.Save.Button".localized, style: .plain,
                                                                 target: self, action: #selector(saveTapped))
         }
     }

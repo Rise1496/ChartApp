@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  ChartApp
+
+  Created by Nikita Yazikov on 14.08.2022.
+  
+*/
+
+"EnterCount.TextField.Placeholder" = "Введите число";
+"EnterCount.Button" = "Поехали";
+"EnterCount.Information" = "Информация";
+"EnterCount.Error.400" = "Запрашиваемо число точек некорректно";
+"EnterCount.Error.500" =  "Ошибка сервера";
+"Alert.Button.OK" = "Ок";
+"Alert.Title.Error" = "Ошибка";
+"Chart.Completed" = "Успех";
+"Chart.Save.Gallery.Error" = "Не удалось сохранить график";
+"Chart.Save.Button" = "Сохранить график";
+"Chart.DataSet" = "Источник данных";

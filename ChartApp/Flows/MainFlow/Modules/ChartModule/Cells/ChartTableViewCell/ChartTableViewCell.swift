@@ -64,7 +64,7 @@ final class ChartTableViewCell: UITableViewCell {
         let xAxisMinimum = viewModel.dataEntries.min(by: { return $1.x > $0.x })?.x
         chartView.xAxis.axisMinimum = xAxisMinimum ?? 0.0
         
-        let set = LineChartDataSet(entries: viewModel.dataEntries, label: "DataSet")
+        let set = LineChartDataSet(entries: viewModel.dataEntries, label: "Chart.DataSet".localized)
         set.drawIconsEnabled = false
         set.isDrawLineWithGradientEnabled = true
         set.drawCirclesEnabled = true

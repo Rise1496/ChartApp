@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  ChartApp
+
+  Created by Nikita Yazikov on 14.08.2022.
+  
+*/
+
+"EnterCount.TextField.Placeholder" = "Enter count";
+"EnterCount.Button" = "Let's go";
+"EnterCount.Information" = "Information";
+"EnterCount.Error.400" = "Requested number of point is invalid";
+"EnterCount.Error.500" =  "Server error";
+"Alert.Button.OK" = "Ok";
+"Alert.Title.Error" = "Error";
+"Chart.Completed" = "Completed";
+"Chart.Save.Gallery.Error" = "Unable to capture chart";
+"Chart.Save.Button" = "Save image";
+"Chart.DataSet" = "Data set";

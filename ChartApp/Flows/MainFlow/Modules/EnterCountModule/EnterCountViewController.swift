@@ -17,7 +17,7 @@ final class EnterCountViewController: BaseViewController, EnterCountViewInput, E
     lazy var textField: UITextField = {
         let textField = UITextField()
         textField.keyboardType = .numberPad
-        textField.placeholder = "Enter count"
+        textField.placeholder = "EnterCount.TextField.Placeholder".localized
         textField.layer.cornerRadius = 5.0
         textField.backgroundColor = .gray
         textField.textAlignment = .center
@@ -30,14 +30,14 @@ final class EnterCountViewController: BaseViewController, EnterCountViewInput, E
         button.backgroundColor = .gray
         button.layer.cornerRadius = 5.0
         button.addTarget(self, action: #selector(applyButtonTapped), for: .touchUpInside)
-        button.setTitle("Let's go", for: .normal)
+        button.setTitle("EnterCount.Button".localized, for: .normal)
         return button
     }()
     
     lazy var informationLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
-        label.text = "Information"
+        label.text = "EnterCount.Information".localized
         return label
     }()
     

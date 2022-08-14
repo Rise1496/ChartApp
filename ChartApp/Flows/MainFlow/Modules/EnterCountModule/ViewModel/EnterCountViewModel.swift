@@ -49,9 +49,9 @@ extension EnterCountViewModel {
                 var errorString = moyaError.localizedDescription
                 switch moyaError.response?.statusCode {
                 case 400:
-                    errorString = "Requested number of point is invalid"
+                    errorString = "EnterCount.Error.400".localized
                 case 500:
-                    errorString = "Server error"
+                    errorString = "EnterCount.Error.500".localized
                 default:
                     break
                 }
