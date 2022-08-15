@@ -88,7 +88,7 @@ extension ChartViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if let cell = cell as? ChartTableViewCell {
+        if let cell = cell as? ChartTableViewCell, chartCell == nil {
             self.chartCell = cell
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Chart.Save.Button".localized, style: .plain,
                                                                 target: self, action: #selector(saveTapped))
